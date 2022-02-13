@@ -5,11 +5,13 @@ public class Model {
     int id;
     String name;
     String phone;
+    String age;
 
-    public Model(int id, String name, String phone) {
+    public Model(int id, String name, String phone, String age) {
         this.id = id;
         this.name = name;
         this.phone = phone;
+        this.age = age;
     }
 
     public int getId() {
@@ -34,5 +36,13 @@ public class Model {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 }

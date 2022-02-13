@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateActivity">
+
+
+    <EditText
+        android:visibility="gone"
+        android:id="@+id/idEt"
+        android:hint="Enter Your Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+
+
+    <EditText
+        android:id="@+id/nameEt"
+        android:hint="Enter Your Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/phoneEt"
+        android:hint="Enter Your Phone Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/ageEt"
+        android:hint="Enter Your Age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"/>
+
+
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/addBtn"
+        android:text="Update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

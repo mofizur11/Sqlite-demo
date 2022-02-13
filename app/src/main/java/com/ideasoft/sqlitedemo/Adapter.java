@@ -3,6 +3,7 @@ package com.ideasoft.sqlitedemo;
 import static android.content.ContentValues.TAG;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,8 +40,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         Model model = list.get(position);
         holder.nameTv.setText(model.getName());
         holder.phoneTv.setText(model.getPhone());
+        holder.ageTv.setText(model.getAge());
 
-        Log.d(TAG, "onBindViewHolder: "+list.size());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(context, UpdateActivity.class);
+
+                i.putExtra("id", model.getId());
+                i.putExtra("name", model.getName());
+                i.putExtra("phone", model.getPhone());
+                i.putExtra("age", model.getAge());
+
+                context.startActivity(i);
+            }
+        });
+
     }
 
     @Override
@@ -49,11 +65,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView nameTv,phoneTv;
+        TextView nameTv,phoneTv,ageTv;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTv = itemView.findViewById(R.id.nameTv);
             phoneTv = itemView.findViewById(R.id.phoneTv);
+            ageTv = itemView.findViewById(R.id.ageTv);
 
         }
     }
